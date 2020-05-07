@@ -1,0 +1,68 @@
+# == Schema Information
+#
+# Table name: incidents
+#
+#  id          :bigint           not null, primary key
+#  address     :string
+#  description :text
+#  age         :integer          not null
+#  gender      :integer          not null
+#  status      :integer          not null
+#  latitude    :float            not null
+#  longitude   :float            not null
+#  confirmed   :boolean          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+suspicious:
+  latitude: 6.256865
+  longitude: -75.592775
+  address: "Carrera 76 #53 - 89"
+  confirmed: true
+  status: 0
+  description: "I'm suspicious"
+  age: 19
+  gender: 0
+
+awaiting_result:
+  latitude: 6.256865
+  longitude: -75.592775
+  address: "Carrera 76 #53 - 89"
+  confirmed: true
+  status: 1
+  description: "I'm awaiting result"
+  age: 35
+  gender: 1
+
+positive:
+  latitude: 6.256865
+  longitude: -75.592775
+  address: "Carrera 76 #53 - 89"
+  confirmed: true
+  status: 2
+  description: "I'm positive"
+  age: 47
+  gender: 0
+
+recoveried:
+  latitude: 6.256865
+  longitude: -75.592775
+  address: "Carrera 76 #53 - 89"
+  confirmed: true
+  status: 3
+  description: "I recoveried from the virus"
+  age: 54
+  gender: 1
+
+dead:
+  latitude: 6.256865
+  longitude: -75.592775
+  address: "Carrera 76 #53 - 89"
+  confirmed: true
+  status: 4
+  description: "I passed away"
+  age: 67
+  gender: 0

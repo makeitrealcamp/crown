@@ -16,4 +16,8 @@
 #
 
 class Incident < ApplicationRecord
+  enum gender: %i(male female)
+  enum status: %i(suspicious awaiting_result positive recoveried dead)
+
+  validates :latitude, :longitude, :confirmed, :status, :gender, :age, presence: true
 end

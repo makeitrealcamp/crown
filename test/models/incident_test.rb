@@ -55,13 +55,6 @@ class IncidentTest < ActiveSupport::TestCase
     assert_not_nil @incident.errors[:status]
   end
 
-  test 'invalid incident when confirmed is not present' do
-    @incident.confirmed = nil
-
-    refute @incident.valid?
-    assert_not_nil @incident.errors[:confirmed]
-  end
-
   test 'invalid incident when latitude is not present' do
     @incident.latitude = nil
 

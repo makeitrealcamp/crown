@@ -1,0 +1,53 @@
+* { box-sizing: border-box; }
+
+body {
+  font-size: 14px;
+}
+
+.leaflet-container {
+  height: 600px;
+  width: 100%;
+}
+
+.case { font-size: 14px; }
+
+.case h4 {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.case .gender, .case .age { margin-bottom: 7px;}
+
+.case .status {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 14px;
+}
+
+.case .status.suspicious, .case .status.awaiting { color: orange; }
+.case .status.positive { color: orange; }
+.case .status.recovered { color: green; }
+.case .status.dead { color: red; }
+
+
+.case-form {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: white;
+  width: 450px;
+  padding: 20px;
+  z-index: 999;
+}
+
+.case-form .form-group { margin-bottom: 20px; }
+.case-form .form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.case-form .form-group .form-control {
+  font-size: 1rem;
+  width: 100%;
+  padding: 8px 12px;
+}

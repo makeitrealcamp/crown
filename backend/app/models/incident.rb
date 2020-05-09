@@ -13,10 +13,11 @@
 #  confirmed   :boolean          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  archived    :boolean          default(FALSE)
 #
 
 class Incident < ApplicationRecord
-  enum gender: %i(male female)
+  enum gender: %i(male female unknown other)
   enum status: %i(suspicious awaiting_result positive recoveried dead)
 
   validates :latitude, :longitude, :status, :gender, :age, presence: true

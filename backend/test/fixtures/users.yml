@@ -1,4 +1,4 @@
- # == Schema Information
+# == Schema Information
 #
 # Table name: users
 #
@@ -16,15 +16,15 @@
 #  updated_at      :datetime         not null
 #
 
-class User < ApplicationRecord
-  has_secure_password
-  enum status: %i(active pending blocked)
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-  validates :name, :last_name, :email, :username, :password, :status, presence: true
-  validates :email, uniqueness: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :username, uniqueness: true
-  validates :password,
-            length: { minimum: 6 },
-            if: -> { new_record? || !password.nil? }
-end
+admin:
+  name: Bob
+  last_name: Marley
+  email: bob-marley@mail.com
+  username: bob-marley
+  password_digest: reggae
+  admin: true
+  validator: false
+  organization: false
+  status: 1

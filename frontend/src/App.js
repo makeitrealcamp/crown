@@ -4,7 +4,7 @@ import { Map, TileLayer } from 'react-leaflet'
 import Marker from './Marker'
 import Form from './Form';
 import incidentsService from './services/cases';
-import './App.css';
+import './App.scss';
 
 const App = () => {
   const [position, setPosition] = useState({ lat: 6.2486, lng: -75.5742, zoom: 13 })

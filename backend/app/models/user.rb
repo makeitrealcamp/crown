@@ -27,4 +27,11 @@ class User < ApplicationRecord
   validates :password,
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
+
+  before_create :set_status_to_pending
+
+  def set_status_to_pending
+    self.status = :pending
+    # Pending: Send user confirmation email
+  end
 end

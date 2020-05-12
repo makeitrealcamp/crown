@@ -24,10 +24,10 @@ class Api::V1::IncidentsController < ApplicationController
 
   private
 
-  def incident_params
-    params.require(:incident).permit(
-      :longitude, :latitude, :age, :gender, :status, :confirmed, :address, :description,
-      :archived
-    )
-  end
+    def incident_params
+      params.require(:incident).permit(
+        :longitude, :latitude, :age, :gender, :status, :confirmed, :address, :description,
+        :archived
+      )
+    end
 end

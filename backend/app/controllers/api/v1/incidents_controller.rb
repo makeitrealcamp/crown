@@ -5,6 +5,7 @@ class Api::V1::IncidentsController < ApplicationController
 
   def create
     @incident = Incident.new(incident_params)
+    @incident.user = @current_user
 
     if @incident.save
       render json: @incident

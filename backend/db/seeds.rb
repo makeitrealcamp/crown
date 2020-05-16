@@ -1,12 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+# Clean up existing records
 Incident.destroy_all
+User.destroy_all
 
 # Random set of real coordinates from Medellin - Antioquia
 coordinates = [
@@ -22,6 +16,7 @@ coordinates = [
   { latitude: 6.180503, longitude: -75.587509 }
 ]
 
+# Incidents
 coordinates.each do |c|
   incident = Incident.create!(
     latitude: c[:latitude],
@@ -34,3 +29,34 @@ coordinates.each do |c|
     gender: Incident.genders.values.sample
   )
 end
+
+# Users
+# Create 5 users: one admin, two validators, one hospital, one city hall and three
+# regular users.
+
+def create_user(params)
+  attributes = params.merge(
+    status: "active",
+    password: "crown-tracker",
+    password_confirmation: "crown-tracker"
+  )
+
+  User.create!(attributes)
+end
+
+# Create `admin` user
+create_user(name: "Marco", last_name: "Polo", email: "marco-polo@crown.com", username: "marco-polo", admin: true)
+# Create `validator` user
+create_user(name: "Carlos", last_name: "Torres", email: "carlos-torres@crown.com", username: "carlos-torres", validator: true)
+# Create `validator` user
+create_user(name: "Andres", last_name: "Lopez", email: "andres-lopez@crown.com", username: "andres-lopez", validator: true)
+# Create `organization` user
+create_user(name: "Hospital Pablo Tobón Uribe", email: "hospital@crown.com", username: "hospital", organization: true)
+# Create `organization` user
+create_user(name: "Alcaldía de Medellín", email: "city-hall@crown.com", username: "city_hall", organization: true)
+# Create `regular` user
+create_user(name: "Pedro", last_name: "Perez", email: "pedro-perez@crown.com", username: "pedro-perez")
+# Create `regular` user
+create_user(name: "Pablo", last_name: "Castro", email: "pablo-castro@crown.com", username: "pablo-castro")
+# Create `regular` user
+create_user(name: "Cristina", last_name: "Palacios", email: "cristina-palacios@crown.com", username: "cristina-palacios")

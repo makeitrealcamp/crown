@@ -7,10 +7,10 @@ class Api::V1::SessionsController < ApplicationController
     if @user&.authenticate(params[:password])
       render json: session_payload, status: :ok
     else
-      render json: { error: 'You are not logged in.' }, status: :unauthorized
+      render json: { error: 'Invalid username or password' }, status: :unauthorized
     end
-  rescue ActiveRecord::RecordNotFound
-    render json: { errors: "User not found" }, status: :not_found
+  rescue
+    render json: { errors: "Invalid username or password" }, status: :unauthorized
   end
 
   private

@@ -20,6 +20,8 @@ class User < ApplicationRecord
   has_secure_password
   enum status: %i(active pending blocked)
 
+  scope :regular, -> { where.not(admin: true, validator: true, organization: true) }
+
   validates :name, :email, :username, :password, :status, presence: true
   validates :last_name, presence: true, unless: :organization?
   validates :email, uniqueness: true

@@ -32,7 +32,7 @@ class Api::V1::SessionsController < ApplicationController
       expiration_time = 24.hour.from_now
 
       {
-        token: JsonWebToken.encode({ user_id: @user_id }, expiration_time),
+        token: JsonWebToken.encode({ user_id: @user.id }, expiration_time),
         expiration_time: expiration_time.strftime("%d-%m-%Y %H:%M"),
         username: @user.username
       }

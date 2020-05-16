@@ -29,6 +29,8 @@ class User < ApplicationRecord
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
 
+  has_many :incidents
+
   # before_create :set_status_to_pending
 
   # Pending: Send user confirmation email

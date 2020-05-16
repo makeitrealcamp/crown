@@ -23,8 +23,21 @@ admin:
   last_name: Marley
   email: bob-marley@mail.com
   username: bob-marley
-  password_digest: reggae
+  # password: crown-tracker
+  password_digest: "$2a$12$IeKp4BGRRVPNfYJ4/W9qHevGbDpa5F4vhph466ahypYfFzBkC3XHa"
   admin: true
   validator: false
   organization: false
   status: 1
+
+regular:
+  name: Jhonny
+  last_name: Bravo
+  email: jhonny-bravo@mail.com
+  username: jhonny-bravo
+  # password: crown-tracker
+  password_digest: "$2a$12$IeKp4BGRRVPNfYJ4/W9qHevGbDpa5F4vhph466ahypYfFzBkC3XHa"
+  admin: false
+  validator: false
+  organization: false
+  status: :active

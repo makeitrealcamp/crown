@@ -27,7 +27,8 @@ class IncidentTest < ActiveSupport::TestCase
       status: Incident.statuses[:positive],
       latitude: 6.256865,
       longitude: -75.592775,
-      confirmed: true
+      confirmed: true,
+      user: users(:regular)
     )
   end
 

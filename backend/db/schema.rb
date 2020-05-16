@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_125217) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.string "last_name", null: false
+    t.string "last_name"
     t.string "email", null: false
     t.string "username", null: false
     t.string "password_digest", null: false

@@ -1,7 +1,7 @@
 class Api::V1::IncidentsController < ApplicationController
   protect_from_forgery with: :null_session
 
-  before_action :authorize_request
+  before_action :authorize_request, except: %i(index)
 
   def create
     @incident = Incident.new(incident_params)

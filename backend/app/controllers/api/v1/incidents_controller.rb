@@ -1,6 +1,8 @@
 class Api::V1::IncidentsController < ApplicationController
   protect_from_forgery with: :null_session
 
+  before_action :authorize_request
+
   def create
     @incident = Incident.new(incident_params)
 
@@ -18,7 +20,6 @@ class Api::V1::IncidentsController < ApplicationController
 
   def index
     @incidents = Incident.all
-    byebug
     render json: @incidents
   end
 

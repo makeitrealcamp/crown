@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_125217) do
     t.integer "status", null: false
     t.float "latitude", null: false
     t.float "longitude", null: false
-    t.boolean "confirmed", null: false
+    t.boolean "confirmed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "archived", default: false

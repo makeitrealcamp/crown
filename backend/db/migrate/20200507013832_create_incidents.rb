@@ -8,7 +8,7 @@ class CreateIncidents < ActiveRecord::Migration[6.0]
       t.integer :status,    null: false
       t.float   :latitude,  null: false
       t.float   :longitude, null: false
-      t.boolean :confirmed, null: false
+      t.boolean :confirmed, default: false
 
       t.timestamps
     end

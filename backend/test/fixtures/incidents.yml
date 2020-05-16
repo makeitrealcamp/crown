@@ -48,13 +48,13 @@ positive:
   age: 47
   gender: 0
 
-recoveried:
+recovered:
   latitude: 6.256865
   longitude: -75.592775
   address: "Carrera 76 #53 - 89"
   confirmed: true
   status: 3
-  description: "I recoveried from the virus"
+  description: "I recovered from the virus"
   age: 54
   gender: 1
 

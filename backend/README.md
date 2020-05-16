@@ -1,24 +1,29 @@
-# README
+# Crown - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To install this project first clone it:
 
-Things you may want to cover:
+```
+git clone https://github.com/makeitrealcamp/crown.git
+```
 
-* Ruby version
+`cd` into the `backend` folder and run `bundle install` and `yarn install`:
 
-* System dependencies
+```
+cd crown/backend
+bundle install
+yarn install
+```
 
-* Configuration
+Configure database:
 
-* Database creation
+```
+rails db:create
+rails db:schema:load
+rails db:seed
+```
 
-* Database initialization
+Run the application:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails s -p3001
+```

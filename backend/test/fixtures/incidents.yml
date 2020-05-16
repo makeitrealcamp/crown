@@ -27,6 +27,7 @@ suspicious:
   description: "I'm suspicious"
   age: 19
   gender: 0
+  user: regular
 
 awaiting_result:
   latitude: 6.256865
@@ -37,6 +38,7 @@ awaiting_result:
   description: "I'm awaiting result"
   age: 35
   gender: 1
+  user: regular
 
 positive:
   latitude: 6.256865
@@ -47,6 +49,7 @@ positive:
   description: "I'm positive"
   age: 47
   gender: 0
+  user: regular
 
 recovered:
   latitude: 6.256865
@@ -57,6 +60,7 @@ recovered:
   description: "I recovered from the virus"
   age: 54
   gender: 1
+  user: regular
 
 dead:
   latitude: 6.256865
@@ -67,3 +71,4 @@ dead:
   description: "I passed away"
   age: 67
   gender: 0
+  user: regular

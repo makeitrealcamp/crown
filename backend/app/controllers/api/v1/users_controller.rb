@@ -15,19 +15,13 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  def show
-    render json: @user, status: :ok
+  def profile    
+    render json: @current_user, status: :ok
   end
 
   private
 
     def user_params
       params.permit(:name, :last_name, :email, :username, :password, :password_confirmation)
-    end
-
-    def find_user
-      @user = User.find_by_username(params[:username])
-    rescue ActiveRecord::RecordNotFound
-      render json: { errors: "User not found" }, status: :not_found
     end
 end

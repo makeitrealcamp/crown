@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
   namespace :api do
     namespace :v1 do
-      resources :users, param: "username", only: %i(create show)
+      get "users/profile", to: "users#profile", as: "user_profile"
+      resources :users, only: %i(create)
+
       resources :incidents, only: %i(create show index)
       resources :sessions,  only: %i(create)
     end

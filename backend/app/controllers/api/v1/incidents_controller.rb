@@ -5,6 +5,7 @@ class Api::V1::IncidentsController < ApplicationController
 
   def create
     @incident = Incident.new(incident_params)
+    @incident.confirmed = false
     @incident.user = @current_user
 
     if @incident.save
@@ -28,7 +29,7 @@ class Api::V1::IncidentsController < ApplicationController
 
     def incident_params
       params.require(:incident).permit(
-        :longitude, :latitude, :age, :gender, :status, :confirmed, :address, :description,
+        :longitude, :latitude, :age, :gender, :status, :address, :description,
         :archived
       )
     end

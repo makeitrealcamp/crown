@@ -4,6 +4,13 @@ body {
   font-size: 14px;
 }
 
+header.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
 .leaflet-container {
   height: 600px;
   width: 100%;

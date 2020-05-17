@@ -1,19 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
+import incidentsService from './services/incidents'
 
-const Form = ({ onCaseReported, onClose }) => {
+const Form = ({ lat, lng, close }) => {
   const [state, setState] = useState({
     address: "",
     gender: "",
     age: "",
     status: "",
-    description: ""
+    description: "",
+    latitude: lat,
+    longitude: lng
   })
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    onCaseReported(state)
+    try {
+      await incidentsService.create(state)
+      close()
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   return (
@@ -52,7 +60,7 @@ const Form = ({ onCaseReported, onClose }) => {
       </div>
 
       <div className="actions">
-        <button onClick={onClose}>Cerrar</button>
+        <button onClick={e => close("incident")}>Cerrar</button>
         <button type="submit">Reportar</button>
       </div>
     </form>

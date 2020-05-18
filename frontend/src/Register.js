@@ -43,6 +43,7 @@ const Register = ({ close }) => {
         </div>
 
         <div className="actions">
+          <button onClick={e => close("incident")}>Cerrar</button>
           <button type="submit">Registrarse</button>
         </div>
       </form>

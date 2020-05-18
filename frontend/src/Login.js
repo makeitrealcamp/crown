@@ -25,6 +25,7 @@ const Login = ({ close }) => {
         </div>
 
         <div className="actions">
+          <button onClick={e => close("incident")}>Cerrar</button>
           <button type="submit">Login</button>
         </div>
       </form>

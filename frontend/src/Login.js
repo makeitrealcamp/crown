@@ -13,8 +13,8 @@ const Login = ({ close }) => {
   }
 
   return  (
-    <div>
-      <form className="case-form" onSubmit={handleSubmit}>
+    <div className="form-page auth-page">
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username or Email:</label>
           <input type="text" id="username" className="form-control" value={state.identifier} onChange={e => setState({ ...state, identifier: e.target.value })} />

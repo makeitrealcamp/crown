@@ -19,8 +19,8 @@ const Register = ({ close }) => {
   }
 
   return  (
-    <div>
-      <form className="case-form" onSubmit={handleSubmit}>
+    <div className="form-page auth-page">
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input type="text" id="username" className="form-control" value={state.username} onChange={e => setState({ ...state, username: e.target.value })} />

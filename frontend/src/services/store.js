@@ -2,6 +2,7 @@ import * as _ from 'lodash'
 
 export default class Store {
   listeners = []
+
   state
 
   constructor(initialState) {
@@ -18,7 +19,7 @@ export default class Store {
     this.state = newState
 
     if (!_.isEqual(oldState, this.state)) {
-      this.listeners.forEach(listener => {
+      this.listeners.forEach((listener) => {
         listener(this.state)
       })
     }
@@ -29,6 +30,6 @@ export default class Store {
   }
 
   unsubscribe(fn) {
-    this.listeners = this.listeners.filter(listener => listener !== fn)
+    this.listeners = this.listeners.filter((listener) => listener !== fn)
   }
 }

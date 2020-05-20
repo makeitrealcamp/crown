@@ -27,3 +27,9 @@ Run the application:
 ```
 rails s -p3001
 ```
+
+Run the Specs:
+
+```
+bundle exec rspec
+```

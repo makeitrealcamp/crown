@@ -2,10 +2,6 @@ import React from 'react'
 import { useStore } from './hooks'
 import authService from './services/auth'
 
-const authbutton = {
-  padding:'6px 8px',
-  margin:'2px',
-}
 
 const Header = ({ register, login }) => {
   const user = useStore(authService)
@@ -22,8 +18,8 @@ const Header = ({ register, login }) => {
           ? <a href="#" onClick={logout}>Logout</a>
           : (
               <div>
-                <button style={authbutton} href="#" onClick={login}>Sign in</button>
-                <button style={authbutton} href="#" onClick={register}>Sign up</button>
+                <button className='authbutton' href="#" onClick={login}>Sign in</button>
+                <button className='authbutton' href="#" onClick={register}>Sign up</button>
               </div>
             )
         }

@@ -1,5 +1,6 @@
+/* eslint-disable react/no-access-state-in-setstate */
+import axios from '../utils/axios'
 import Store from './store'
-import axios from '../axios'
 
 class IncidentsService extends Store {
   async load() {

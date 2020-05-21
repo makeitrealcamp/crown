@@ -11,8 +11,13 @@ header.main {
   padding: 20px;
 }
 
+.map {
+  position:absolute;
+}
+
+
 .leaflet-container {
-  height: 600px;
+  height: 90%; // Header takes about 10%
   width: 100%;
 }
 
@@ -92,3 +97,5 @@ header.main {
     padding:6px 8px;
     margin:2px;
 }
+
+

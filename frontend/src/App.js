@@ -44,7 +44,7 @@ const App = () => {
     <>
       <Header login={openLogin} register={openRegister}  />
       <div>
-        <Map center={[position.lat, position.lng]} zoom={position.zoom} ref={mapRef} onClick={openIncidentForm}>
+        <Map center={[position.lat, position.lng]} zoom={position.zoom} ref={mapRef} onClick={openIncidentForm} className='map'>
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

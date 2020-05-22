@@ -1,8 +1,8 @@
 # Covid-19 Tracker Map
 
-We are building a crowdsourced Covid-19 map for cities where the community can report geocalized information related to the virus (cases, news, briefings) and visualize it on the map.
+We are building a crowdsourced Covid-19 map for cities where the community can report geolocalized information related to the virus (cases, news, briefings) and visualize it on the map.
 
-The application will be divided in three componentes: a [Ruby on Rails](https://rubyonrails.org/) backed, a [React](https://reactjs.org/) frontend, and a [React Native](https://reactnative.dev/) mobile application.
+The application will be divided in three components: a [Ruby on Rails](https://rubyonrails.org/) backend, a [React](https://reactjs.org/) frontend, and a [React Native](https://reactnative.dev/) mobile application.
 
 Currently we don't have plans of hosting our own version although we might in the future. We are doing this for fun and to create a space of collaborative development on a subject that affect us all, so anyone is free to host their own version as well.
 

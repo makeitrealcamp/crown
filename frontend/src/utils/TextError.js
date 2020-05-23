@@ -1,7 +1,7 @@
 import React from 'react'
 
-function TextError({ children }) {
-  return <div className="error">{children}</div>
+function TextError({ message, errorField }) {
+  return <div className="error" data-testid={`error-${errorField}`}>{message}</div>
 }
 
 export default TextError

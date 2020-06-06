@@ -80,10 +80,14 @@ header.main {
   justify-content: center;
   align-items: center;
 
-  form {
+  .form {
     background: white;
     padding: 20px;
     width: 450px;
     border-radius: 10px;
   }
+}
+
+.error {
+  color: red;
 }

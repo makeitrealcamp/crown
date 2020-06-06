@@ -1,36 +1,52 @@
-import React, { useState } from 'react'
-
+import React from 'react'
+import {
+  Formik,
+  Form,
+  Field,
+  ErrorMessage,
+} from 'formik'
+import * as Yup from 'yup'
+import TextError from '../utils/TextError'
 import authService from '../services/auth'
 
-const Login = ({ close }) => {
-  const [state, setState] = useState({ identifier: '', password: '' })
+const initialValues = {
+  username: '',
+  password: '',
+}
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-
-    await authService.login(state.identifier, state.password)
-    close()
-  }
-
-  return (
+const validationSchema = Yup.object({
+  username: Yup.string().required('Este es un campo requerido'),
+  password: Yup.string().required('Este es un campo requerido'),
+})
+const Login = ({ close }) => (
+  <Formik
+    initialValues={initialValues}
+    validationSchema={validationSchema}
+    onSubmit={async (values) => {
+      await authService.login(values.username, values.password)
+      close()
+    }}
+  >
     <div className="form-page auth-page">
-      <form onSubmit={handleSubmit}>
+      <Form className="form">
         <div className="form-group">
           <label htmlFor="username">Username or Email:</label>
-          <input type="text" id="username" className="form-control" value={state.identifier} onChange={(e) => setState({ ...state, identifier: e.target.value })} />
+          <Field type="text" id="username" name="username" className="form-control" placeholder="username" />
+          <ErrorMessage name="username" render={(message) => <TextError errorField="username" message={message} />} />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
-          <input type="password" id="password" className="form-control" value={state.password} onChange={(e) => setState({ ...state, password: e.target.value })} />
+          <Field type="password" id="password" name="password" className="form-control" placeholder="****" />
+          <ErrorMessage name="password" render={(message) => <TextError errorField="password" message={message} />} />
         </div>
-
         <div className="actions">
           <button type="button" onClick={() => close('incident')}>Cerrar</button>
           <button type="submit">Login</button>
         </div>
-      </form>
+
+      </Form>
     </div>
-  )
-}
+  </Formik>
+)
 
 export default Login

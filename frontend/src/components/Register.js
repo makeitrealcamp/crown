@@ -21,22 +21,20 @@ const initialValues = {
 const validationSchema = Yup.object({
   username: Yup.string()
     .min(4, 'Mínimo 4 caracteres')
-    .max(10, 'Máximo 10 caracteres')
+    .max(15, 'Máximo 15 caracteres')
     .required('Este es un campo requerido'),
   email: Yup.string()
     .email('Correo inválido')
     .required('Este es un campo requerido'),
   name: Yup.string()
-    .min(4, 'Mínimo 4 caracteres')
-    .max(10, 'Máximo 10 caracteres')
+    .max(20, 'Máximo 10 caracteres')
     .required('Este es un campo requerido'),
   last_name: Yup.string()
-    .min(4, 'Mínimo 4 caracteres')
-    .max(10, 'Máximo 10 caracteres')
+    .max(20, 'Máximo 20 caracteres')
     .required('Este es un campo requerido'),
   password: Yup.string()
     .min(4, 'Mínimo 4 caracteres')
-    .max(10, 'Máximo 10 caracteres')
+    .max(100, 'Máximo 100 caracteres')
     .required('Este es un campo requerido'),
   passwordConfirmation: Yup.string()
     .oneOf([Yup.ref('password'), null], 'Los password deben coincidir')
